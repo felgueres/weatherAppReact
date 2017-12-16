@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-export default class WeatherList extends Component {
+class WeatherList extends Component {
   render() {
     return (
       <table className="table table-hover">
@@ -19,20 +19,8 @@ export default class WeatherList extends Component {
   }
 }
 
-// function mapStateToProps(state){
-//   return {weather: state.weather}
-// }
-// // Using ES6 syntax, since we are pulling from state, the variable weather, we could use
-// // { weather }
-
-// function mapStateToProps({ weather }){
-//   return {weather: weather}
-// }
-
-// But now, since you have weather : weather,
-// you can even more refactor just one weather -- ULTIMATE REFACTORING!
-// This is possible where you have the key and value completely identical.
-
 function mapStateToProps({ weather }){
-  return { weather }
+  return { weather };
 }
+
+export default connect(mapStateToProps)(WeatherList);
